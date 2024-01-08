@@ -1,0 +1,12 @@
+.plant-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.plant-image {
+  width: 100%;
+}
+.plant-description,
+.plant-category {
+  padding: 0.5rem;
+}

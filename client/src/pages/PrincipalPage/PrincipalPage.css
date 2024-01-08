@@ -1,0 +1,13 @@
+.principal-page-container {
+  box-sizing: content-box;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+.section {
+  padding: 0.5rem;
+  text-align: center;
+}
+.section-list {
+  width: 100%;
+}
