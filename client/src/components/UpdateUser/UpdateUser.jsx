@@ -1,8 +1,12 @@
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { updateDataService } from "../../services/userService";
 import { AuthContext } from "../../context/AuthContext";
+import "./UpdateUser.css";
+import { updateUserPropTypes } from "../../utils/customPropTypes";
 
 export const UpdateUser = () => {
+  const navigate = useNavigate();
   const { token } = useContext(AuthContext);
   const [newName, setNewName] = useState("");
   const [newEmail, setNewEmail] = useState("");
@@ -17,13 +21,19 @@ export const UpdateUser = () => {
       setError("");
 
       const formData = new FormData();
-      formData.append("name", newName);
+      newName && formData.append("name", newName);
+      newEmail && formData.append("email", newEmail);
+      newPass && formData.append("password", newPass);
+      newBio && formData.append("bio", newBio);
+      newAvatar && formData.append("avatar", newAvatar);
 
       const body = await updateDataService(formData, token);
       if (body.status === "error") {
         throw new Error(body.message);
       }
+      alert("Actualizado correctamente");
       window.location.reload();
+      navigate("/");
     } catch (error) {
       setError(error.message);
     }
@@ -33,7 +43,6 @@ export const UpdateUser = () => {
     <div className="update-data">
       <section className="update-user-form">
         <h3>Actualiza tus datos</h3>
-
         <form onSubmit={updateData} className="update-form">
           <fieldset>
             <label htmlFor="name">Nombre</label>
@@ -65,10 +74,10 @@ export const UpdateUser = () => {
             ></input>
           </fieldset>
           <fieldset>
-            <label htmlFor="biografia">Bio</label>
+            <label htmlFor="bio">Biografía</label>
             <input
               type="text"
-              id="biografia"
+              id="bio"
               value={newBio}
               onChange={(e) => setNewBio(e.target.value)}
             ></input>
@@ -87,8 +96,11 @@ export const UpdateUser = () => {
 
           <button className="update-btn">Actualizar</button>
         </form>
-        {error && <p>{setError}</p>}
+        {error && <p>{error}</p>}
       </section>
     </div>
   );
+};
+UpdateUser.propTypes = {
+  user: updateUserPropTypes,
 };

@@ -10,3 +10,8 @@
   height: 200px;
   border-radius: 90%;
 }
+.user-page-links {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

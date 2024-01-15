@@ -38,18 +38,29 @@ export const getMyDataService = async (token) => {
 export const updateDataService = async (formData, token) => {
   const response = await fetch(`${baseURL}/user/update`, {
     method: "PUT",
-    body: formData,
     headers: {
       Authorization: `Bearer ${token}`,
     },
+    body: formData,
   });
   const body = await response.json();
-  return body.formData;
+  return body.data;
 };
 
 // Otros usuarios
 export const getUsersDataService = async (id, token) => {
   const response = await fetch(`${baseURL}/users/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const body = await response.json();
+  return body.data;
+};
+
+// Mi lista de favoritos
+export const getMyFavoritesService = async (token) => {
+  const response = await fetch(`${baseURL}/user/favs`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },

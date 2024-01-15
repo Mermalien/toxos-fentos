@@ -1,6 +1,5 @@
 import "./PlantHeader.css";
-import { plantItemPropTypes } from "../../utils/customPropTypes";
-
+import PropTypes from "prop-types";
 export const PlantHeader = ({ title }) => {
   return (
     <div className="plant-header">
@@ -10,5 +9,5 @@ export const PlantHeader = ({ title }) => {
 };
 
 PlantHeader.propTypes = {
-  title: plantItemPropTypes,
+  title: PropTypes.string.isRequired,
 };

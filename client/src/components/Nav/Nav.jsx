@@ -9,6 +9,10 @@ export const Nav = () => {
     setOpen(!open);
   };
 
+  const handleMenuClick = () => {
+    setOpen(false);
+  };
+
   return (
     <nav className="navBar">
       <div className={`hamburguer ${open ? "open" : ""}`} onClick={handleMenu}>
@@ -17,7 +21,7 @@ export const Nav = () => {
         <div className="bar"></div>
       </div>
       {open && (
-        <ol className="menu">
+        <ol className="menu" onClick={handleMenuClick}>
           <li>
             {" "}
             <Auth />

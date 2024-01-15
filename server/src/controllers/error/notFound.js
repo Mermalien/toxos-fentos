@@ -1,6 +1,6 @@
 const notFound = (req, res) => {
   res.status(404).send({
-    status: "error",
+    status: "error 404",
     message: "No se ha encontrado",
   });
 };

@@ -9,9 +9,9 @@ export const userPropTypes = PropTypes.shape({
   avatar: PropTypes.string,
 });
 
-export const UpdateUserPropTypes = PropTypes.shape({
-  id: PropTypes.number,
-  name: PropTypes.string,
+export const updateUserPropTypes = PropTypes.shape({
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.optional,
   email: PropTypes.string,
   password: PropTypes.string,
   bio: PropTypes.string,

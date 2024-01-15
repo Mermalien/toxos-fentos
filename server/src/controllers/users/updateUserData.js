@@ -27,13 +27,12 @@ const updateUserData = async (req, res, next) => {
         status: "Actualizado correctamente",
         data: newAvatar,
       });
-      await updateUserById(req.auth.id, data);
-
-      res.status(201).send({
-        status: "Actualizado correctamente",
-        data: data,
-      });
     }
+    await updateUserById(req.auth.id, data);
+    res.status(201).send({
+      status: "Actualizado correctamente",
+      data: data,
+    });
   } catch (error) {
     next(error);
   }

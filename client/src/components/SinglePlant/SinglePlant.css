@@ -1,6 +1,5 @@
 .single-plant-container {
-  width: 450px;
-  border: solid 1px black;
+  width: 400px;
   display: flex;
   flex-direction: column;
 }

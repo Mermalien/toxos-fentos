@@ -14,7 +14,7 @@ export const PlantsList = ({ plants, setPlants }) => {
           <li key={plant.id}>
             <SinglePlantItem
               plant={plant}
-              plants={plants[0]}
+              plants={plants}
               setPlants={setPlants}
             />
           </li>
@@ -26,6 +26,6 @@ export const PlantsList = ({ plants, setPlants }) => {
 
 PlantsList.propTypes = {
   map: PropTypes.func,
-  plants: PropTypes.object,
+  plants: PropTypes.array,
   setPlants: PropTypes.func,
 };

@@ -3,6 +3,7 @@ const deletePlant = require("./deletePlant");
 const getAllPlants = require("./getAllPlants");
 const getByName = require("./getByName");
 const getSinglePlant = require("./getSinglePlant");
+const getPlantByCategory = require("./getPlantByCategory");
 
 module.exports = {
   createPlant,
@@ -10,4 +11,5 @@ module.exports = {
   getAllPlants,
   getSinglePlant,
   getByName,
+  getPlantByCategory,
 };

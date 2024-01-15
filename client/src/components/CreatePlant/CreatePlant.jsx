@@ -79,7 +79,7 @@ export const CreatePlant = () => {
           />
         </fieldset>
         <fieldset>
-          <label htmlFor="category">Temática</label>
+          <label htmlFor="category">Tipo</label>
           <select
             name="category"
             onChange={(e) => setCategory(e.target.value)}

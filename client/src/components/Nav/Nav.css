@@ -27,11 +27,11 @@
 .menu {
   list-style-type: none;
   padding: 0;
-  margin: 0;
-  font-size: 18px;
+  margin: 10px;
+  font-size: 20px;
   width: 60%;
   display: flex;
-  text-align: center;
+  text-align: left;
 }
 
 .menu li {

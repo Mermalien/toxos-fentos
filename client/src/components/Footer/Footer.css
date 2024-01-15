@@ -1,5 +1,4 @@
 .footer {
-  border: solid 1px black;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -8,7 +7,6 @@
 
 @media (min-width: 768px) {
   .footer {
-    border: solid 1px black;
     width: 100vw;
     display: flex;
     justify-content: center;

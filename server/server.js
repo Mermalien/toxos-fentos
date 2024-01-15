@@ -9,6 +9,10 @@ const {
   loginUser,
   getMe,
   getUser,
+  getUserByName,
+  getAllUsers,
+  updateUserData,
+  getUserFavs,
 } = require("./src/controllers/users");
 
 // Controllers de las plantas
@@ -18,6 +22,7 @@ const {
   getAllPlants,
   getSinglePlant,
   getByName,
+  getPlantByCategory,
 } = require("./src/controllers/plants");
 
 // Controller de favoritos
@@ -28,7 +33,6 @@ const validateAuth = require("./src/middlewares/validateAuth");
 
 // Controllers de error
 const { handleError, notFound } = require("./src/controllers/error");
-const updateUserData = require("./src/controllers/users/updateUserData");
 
 const app = express();
 const { PORT } = process.env;
@@ -39,15 +43,19 @@ app.use(fileUpload());
 app.use(express.static(process.env.UPLOADS_DIR));
 
 // Endpoints de usuario
-app.post("/register", createUser);
 app.post("/login", loginUser);
+app.post("/register", createUser);
 app.get("/user", validateAuth, getMe);
+app.get("/users", getAllUsers);
+//app.get("/filterUsers/:name", getUserByName); // ARREGLAR: NO FILTRA
 app.get("/users/:id", validateAuth, getUser);
+app.get("/user/favs", validateAuth, getUserFavs);
 app.put("/user/update", validateAuth, updateUserData);
 
 // Endpoints de las plantas
 app.get("/plants", getAllPlants);
 app.get("/plants/:title", getByName);
+app.get("/plants/:category", getPlantByCategory);
 app.get("/plants/:plantId", getSinglePlant);
 app.post("/create", validateAuth, createPlant);
 app.post("/fav/:plantId", validateAuth, favController);

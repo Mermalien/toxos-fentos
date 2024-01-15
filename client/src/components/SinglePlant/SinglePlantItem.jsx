@@ -16,9 +16,13 @@ import { RiDeleteBinLine } from "react-icons/ri";
 export const SinglePlantItem = ({ plant, deletePlant, plants, setPlants }) => {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
-  const [isFav, setIsFav] = useState(false);
   const [showFullDescription, setShowFullDescription] = useState(false);
   const [error, setError] = useState("");
+
+  const [isFav, setIsFav] = useState(() => {
+    const storedValue = localStorage.getItem(`fav_${plant.id}`);
+    return storedValue ? JSON.parse(storedValue) : false;
+  });
 
   const handleFav = async (e) => {
     try {
@@ -46,6 +50,7 @@ export const SinglePlantItem = ({ plant, deletePlant, plants, setPlants }) => {
       }
     } catch (error) {
       setError(error.message);
+      console.error(error.message);
     }
   };
 
@@ -105,7 +110,7 @@ export const SinglePlantItem = ({ plant, deletePlant, plants, setPlants }) => {
             {user?.id === plant.userId ? (
               <button
                 onClick={() => {
-                  if (window.confirm("Quieres eliminarla?"))
+                  if (window.confirm("¿Quieres eliminar esta publicación?"))
                     deleteItem(plant.id);
                   navigate("/");
                 }}
@@ -128,7 +133,7 @@ export const SinglePlantItem = ({ plant, deletePlant, plants, setPlants }) => {
 
 SinglePlantItem.propTypes = {
   plant: plantItemPropTypes,
-  plants: PropTypes.object,
+  plants: PropTypes.arrayOf(plantItemPropTypes),
   setPlants: PropTypes.func,
   deletePlant: PropTypes.func,
 };

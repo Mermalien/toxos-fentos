@@ -20,4 +20,61 @@ h3 {
 }
 .App button {
   border: none;
+  background-color: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ESTILOS COMUNES EN FORMULARIOS */
+form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+fieldset {
+  border: none;
+}
+fieldset > label {
+  margin-right: 3%;
+}
+input:hover:not(.checkbox) {
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  word-wrap: break-word;
+}
+
+/* ESTILOS PARA EL SWITCHER */
+.switch-container {
+  width: 25%;
+  padding: 10px;
+  margin-left: 10px;
+  display: flex;
+  align-content: center;
+}
+.light-mode-icon {
+  fill: yellow;
+}
+
+.dark-mode-icon {
+  fill: #98c496;
+}
+
+.switch {
+  height: 100%;
+  width: 100%;
+}
+
+.dark {
+  background-color: #333;
+  color: #fff;
+}
+.light {
+  background-color: #fff;
+  color: #333;
 }

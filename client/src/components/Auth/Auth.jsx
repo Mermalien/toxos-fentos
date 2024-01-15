@@ -18,7 +18,6 @@ export const Auth = () => {
               src={`${baseURL}/${user.avatar}`}
               style={{ width: "40px", height: "40px", borderRadius: "20px" }}
             />
-            {user.name}
           </Link>
         </button>{" "}
         <button className="btn-link-auth">
@@ -39,12 +38,12 @@ export const Auth = () => {
       <div className="session-btns">
         <p>
           <Link to={`/login`} className="p-link">
-            LOGIN
+            Entrar
           </Link>
         </p>
         <p>
           <Link to={`/register`} className="p-link">
-            REGISTRO
+            Registrarse
           </Link>
         </p>
       </div>

@@ -1,6 +1,6 @@
 import "./PlantBody.css";
+import PropTypes from "prop-types";
 const baseURL = import.meta.env.VITE_APP_BACKEND;
-import { plantItemPropTypes } from "../../utils/customPropTypes";
 
 export const PlantBody = ({ description, image, category }) => {
   return (
@@ -21,7 +21,7 @@ export const PlantBody = ({ description, image, category }) => {
 };
 
 PlantBody.propTypes = {
-  description: plantItemPropTypes,
-  image: plantItemPropTypes,
-  category: plantItemPropTypes,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
