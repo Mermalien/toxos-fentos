@@ -47,7 +47,6 @@ app.post("/login", loginUser);
 app.post("/register", createUser);
 app.get("/user", validateAuth, getMe);
 app.get("/users", getAllUsers);
-//app.get("/filterUsers/:name", getUserByName); // ARREGLAR: NO FILTRA
 app.get("/users/:id", validateAuth, getUser);
 app.get("/user/favs", validateAuth, getUserFavs);
 app.put("/user/update", validateAuth, updateUserData);

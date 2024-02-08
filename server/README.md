@@ -1,4 +1,9 @@
-# Funcionalidades
+# Instalación
+
+npm install (install node modules)
+npm run dev (run app)
+
+# Funcionalidades de la app
 
 - 🍀 : FUNCIONA
 - 🥀 : QUIERO HACER
@@ -16,4 +21,5 @@
 - 🍀Eliminar de favoritos.
 - 🍀Ver mi lista de favoritos.
 - 🍀Filtrar plantas por nombre.
-- 🥀Poder comentar en las publicaciones.
+- 🥀Comentar publicaciones.
+- 🥀Enviar mensajes entre usuarios.

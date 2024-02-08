@@ -4,8 +4,8 @@ import { AuthContext } from "../context/AuthContext";
 import { getUsersDataService } from "../services/userService";
 
 export const useUser = (id) => {
-  const [user, setUser] = useState([]);
   const { token } = useContext(AuthContext);
+  const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -14,7 +14,6 @@ export const useUser = (id) => {
       try {
         const data = await getUsersDataService(id, token);
         setUser(data);
-        setLoading(true);
       } catch (error) {
         setErrorMsg(error.message);
       } finally {
@@ -23,5 +22,5 @@ export const useUser = (id) => {
     };
     getUser();
   }, [id, token]);
-  return { user, loading, errorMsg };
+  return { user, setUser, loading, errorMsg };
 };

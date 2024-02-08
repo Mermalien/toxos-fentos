@@ -7,7 +7,10 @@ export const Social = () => {
     <div className="social-media">
       <div className="social-links">
         <a href="https://github.com/Mermalien" target="_blank" rel="noreferrer">
-          <FaGithub style={{ width: "25", height: "25", fill: "#27ad6a" }} />
+          <FaGithub
+            style={{ width: "25", height: "25", fill: "#27ad6a" }}
+            className="react-icon"
+          />
         </a>
         <a
           href="https://www.linkedin.com/in/andrea-guisande-nieto"
@@ -16,6 +19,7 @@ export const Social = () => {
         >
           <FaLinkedinIn
             style={{ width: "25", height: "25", fill: "#27ad6a" }}
+            className="react-icon"
           />
         </a>
       </div>

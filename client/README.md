@@ -1,12 +1,13 @@
 # TODO
 
-- Arreglar la lista de favoritos.
+- Si elimino un favorito de la lista no se elimina el favorito en el item de la página principal
 - El botón de leer más en cada publicación debería ir dentro de PlantBody.
-- Filtro de búsqueda por nombre o categoría de la planta.
+- Enviar mensajes entre usuarios.
+- Ver perfil de otros usuarios (sus publicaciones).
 
 ## TODO CSS
 
 - DARK MODE
 - TAMAÑO RESPONSIVE(se ve bien a partir de 450px)
 
-# SI ESCRIBO LA RUTA CON EL ID DE UN USUARIO ME LLEVA A SU PERFIL, EN LA LISTA DE FAVORITOS APARECEN LOS MÍOS, ME DEJA EDITAR ESA LISTA Y ACCEDER AL FORMULARIO DE ACTUALIZAR DATOS.
+LAS IMÁGENES DE PLANTAS DE TEMPORADA SON SACADAS DE PIXABAY O DE MI PROPIA GALERÍA DE IMÁGENES

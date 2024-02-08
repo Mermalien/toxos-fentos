@@ -24,6 +24,9 @@ h3 {
   font-size: 18px;
   cursor: pointer;
 }
+.App .react-icon {
+  color: #27ad6a;
+}
 
 /* ESTILOS COMUNES EN FORMULARIOS */
 form {
@@ -41,12 +44,6 @@ fieldset {
 }
 fieldset > label {
   margin-right: 3%;
-}
-input:hover:not(.checkbox) {
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 15px;
-  word-wrap: break-word;
 }
 
 /* ESTILOS PARA EL SWITCHER */
@@ -71,10 +68,10 @@ input:hover:not(.checkbox) {
 }
 
 .dark {
-  background-color: #333;
+  background-color: #333333;
   color: #fff;
 }
 .light {
-  background-color: #fff;
+  background-color: #e9f5ed;
   color: #333;
 }

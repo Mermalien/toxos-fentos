@@ -1,21 +1,23 @@
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
 import { getMyDataService } from "../services/userService";
+import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
-  const [user, setUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getUserData = async () => {
       try {
         const data = await getMyDataService(token);
-        setUser(data);
+        setCurrentUser(data);
       } catch (error) {
         setToken("");
-        setUser(null);
+        setCurrentUser(null);
       }
     };
     if (token) getUserData();
@@ -31,10 +33,11 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     localStorage.removeItem("token");
     setToken("");
-    setUser(null);
+    setCurrentUser(null);
+    navigate("/");
   };
   return (
-    <AuthContext.Provider value={{ token, user, login, logout }}>
+    <AuthContext.Provider value={{ token, currentUser, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

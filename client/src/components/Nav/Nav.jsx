@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Nav.css";
 import { Auth } from "../Auth/Auth";
+import { Link } from "react-router-dom";
 
 export const Nav = () => {
   const [open, setOpen] = useState(false);
@@ -25,6 +26,9 @@ export const Nav = () => {
           <li>
             {" "}
             <Auth />
+            <Link to={"seasons"} className="link">
+              Plantas de temporada🌸
+            </Link>
           </li>
         </ol>
       )}
@@ -32,6 +36,9 @@ export const Nav = () => {
         <div className="auth-nav">
           <span>
             <Auth />
+            <Link to={"seasons"} className="link">
+              Plantas de temporada🌸
+            </Link>
           </span>
         </div>
       </div>

@@ -17,6 +17,11 @@ import { CreatePlant } from "./components/CreatePlant/CreatePlant";
 import { UserPage } from "./pages/UserPage/UserPage";
 import { UpdateUser } from "./components/UpdateUser/UpdateUser";
 import { MyFavs } from "./components/MyFavs/MyFavs";
+import { UsersList } from "./components/UsersList/UsersList";
+import { SpringPlants } from "./components/Seasons/Spring/SpringPlants";
+import { SummerPlants } from "./components/Seasons/Summer/SummerPlants";
+import { AutumnPlants } from "./components/Seasons/Autumn/AutumnPlants";
+import { WinterPlants } from "./components/Seasons/Winter/WinterPlants";
 
 const PrivateRoute = ({ children }) => {
   const { token } = useContext(AuthContext);
@@ -62,16 +67,14 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/create" element={<CreatePlant />} />
             <Route path="/seasons" element={<Seasons />} />
+            <Route path="/seasons/spring" element={<SpringPlants />} />
+            <Route path="/seasons/summer" element={<SummerPlants />} />
+            <Route path="/seasons/autumn" element={<AutumnPlants />} />
+            <Route path="/seasons/winter" element={<WinterPlants />} />
             <Route path="/plants" element={<PlantsList />} />
             <Route path="/plants/:plantId" element={<SinglePlantItem />} />
-            <Route
-              path="/users/:id"
-              element={
-                <PrivateRoute>
-                  <UserPage />
-                </PrivateRoute>
-              }
-            />
+            <Route path="/users" element={<UsersList />} />
+            <Route path="/users/:id" element={<UserPage />} />
             <Route
               path="/user/update"
               element={

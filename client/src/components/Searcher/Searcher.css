@@ -1,0 +1,22 @@
+.plants-searcher {
+  display: flex;
+}
+.users-searcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.users-searcher input {
+  height: 45px;
+  width: 250px;
+  border-radius: 10px;
+  border: solid 1px green;
+}
+.users-searcher .react-icon {
+  width: 28px;
+  height: 28px;
+}
+.plants-searcher input:focus,
+.users-searcher input:focus {
+  padding: 10px;
+}

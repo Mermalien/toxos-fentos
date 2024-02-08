@@ -1,0 +1,12 @@
+.usersList {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.usersList h2 {
+  margin-top: 1rem;
+}
+.single-user-of-list {
+  display: flex;
+}

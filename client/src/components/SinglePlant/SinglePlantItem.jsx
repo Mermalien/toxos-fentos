@@ -12,10 +12,12 @@ import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { MdFavorite } from "react-icons/md";
 import { RiDeleteBinLine } from "react-icons/ri";
+import { useMyFavs } from "../../hooks/useMyFavs";
 
 export const SinglePlantItem = ({ plant, deletePlant, plants, setPlants }) => {
   const navigate = useNavigate();
-  const { user } = useContext(AuthContext);
+  const { currentUser, token } = useContext(AuthContext);
+  const { refetch } = useMyFavs(token);
   const [showFullDescription, setShowFullDescription] = useState(false);
   const [error, setError] = useState("");
 
@@ -48,6 +50,7 @@ export const SinglePlantItem = ({ plant, deletePlant, plants, setPlants }) => {
       if (body.status === "error") {
         throw new Error(body.message);
       }
+      refetch();
     } catch (error) {
       setError(error.message);
       console.error(error.message);
@@ -92,22 +95,24 @@ export const SinglePlantItem = ({ plant, deletePlant, plants, setPlants }) => {
                 Mostrar menos
               </button>
             )}
-            {user ? (
+            {currentUser ? (
               <div>
                 <button onClick={handleFav}>
                   {isFav ? (
                     <MdFavorite
                       style={{ width: "25px", height: "25px", fill: "red" }}
+                      className="react-icon"
                     />
                   ) : (
                     <MdFavorite
+                      className="react-icon"
                       style={{ width: "25px", height: "25px", fill: "gray" }}
                     />
                   )}
                 </button>
               </div>
             ) : null}
-            {user?.id === plant.userId ? (
+            {currentUser?.id === plant.userId ? (
               <button
                 onClick={() => {
                   if (window.confirm("¿Quieres eliminar esta publicación?"))
@@ -120,6 +125,7 @@ export const SinglePlantItem = ({ plant, deletePlant, plants, setPlants }) => {
                     width: "25px",
                     height: "25px",
                   }}
+                  className="react-icon"
                 />
               </button>
             ) : null}

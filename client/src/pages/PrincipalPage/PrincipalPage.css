@@ -4,10 +4,32 @@
   display: flex;
   flex-direction: column;
 }
-.section {
-  padding: 0.5rem;
-  text-align: center;
+.searchers {
+  height: 4rem;
+  width: 100vw;
+  position: relative;
+  margin-bottom: 1.6rem;
+}
+.searchers .go-search-icon {
+  height: 5rem;
+  width: 100%;
+}
+
+/* CAMBIAR ESTE COLOR */
+.isOpen .react-icon {
+  fill: rgba(132, 165, 132, 0.631);
+}
+.searchers-components {
+  position: absolute;
+  margin-left: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
 }
 .section-list {
   width: 100%;
+}
+.users-search {
+  border: solid 1px;
+  border-radius: 10px;
 }

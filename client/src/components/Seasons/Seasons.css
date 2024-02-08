@@ -1,0 +1,43 @@
+.seasons-container {
+  height: 100vh;
+}
+.seasons-page {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.seasons-btns {
+  width: 100vw;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1rf;
+  grid-template-areas:
+    "primavera verano"
+    "otoño invierno";
+  border-radius: 10px;
+  align-items: start;
+  margin-top: 1rem;
+}
+.seasons-btns button {
+  height: 100%;
+  background-size: 100% 100%;
+}
+.spring-btn {
+  grid-area: primavera;
+  background-image: url("../../images/spring/springbg.jpg");
+}
+.summer-btn {
+  grid-area: verano;
+  background-image: url("../../images/summer/summerbg.jpg");
+}
+.autumn-btn {
+  grid-area: otoño;
+  background-image: url("../../images/autumn/autumnbg.jpg");
+}
+.winter-btn {
+  grid-area: invierno;
+  background-image: url("../../images/winter/winterbg.jpg");
+}

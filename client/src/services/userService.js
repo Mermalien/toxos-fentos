@@ -47,13 +47,20 @@ export const updateDataService = async (formData, token) => {
   return body.data;
 };
 
-// Otros usuarios
+// Seleccionamos usuario por id
 export const getUsersDataService = async (id, token) => {
   const response = await fetch(`${baseURL}/users/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
+  const body = await response.json();
+  return body.data;
+};
+
+// Lista de todos los usuarios de la app
+export const getAllUsersService = async (name = "") => {
+  const response = await fetch(`${baseURL}/users?name=${name}`);
   const body = await response.json();
   return body.data;
 };

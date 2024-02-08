@@ -2,8 +2,10 @@ const baseURL = import.meta.env.VITE_APP_BACKEND;
 import { getToken } from "../utils/getToken";
 
 // Lista de publicaciones
-export const listPlantsService = async () => {
-  const response = await fetch(`${baseURL}/plants`);
+export const listPlantsService = async (title = "", category = "") => {
+  const response = await fetch(
+    `${baseURL}/plants?title=${title}&category=${category}`
+  );
   const body = await response.json();
   return body.data;
 };

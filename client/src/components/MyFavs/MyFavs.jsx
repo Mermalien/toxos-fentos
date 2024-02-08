@@ -40,7 +40,7 @@ export const MyFavs = () => {
               <img src={`${baseURL}/${favItem.image}`}></img>
               <p> {favItem.description}</p>
               <button onClick={() => handleDeleteList(favItem.plantId)}>
-                <RiDeleteBinLine className="delete-fav-icon" />
+                <RiDeleteBinLine className="react-icon" />
               </button>
             </li>
           );
