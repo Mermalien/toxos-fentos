@@ -1,0 +1,24 @@
+.seasons-countdown {
+  width: 90vw;
+  padding: 10px;
+}
+.calendar-seasons-icon {
+  width: 30px;
+  height: 30px;
+}
+.seasons-countdown ul {
+  height: 5rem;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  list-style: none;
+  /*background-color: rgba(194, 163, 78, 0.515);*/
+  background: linear-gradient(
+    to right,
+    rgb(162, 212, 100),
+    rgb(255, 247, 0),
+    rgb(236, 185, 53)
+  );
+  border-radius: 10px;
+}

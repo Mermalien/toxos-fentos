@@ -22,6 +22,12 @@ import { SpringPlants } from "./components/Seasons/Spring/SpringPlants";
 import { SummerPlants } from "./components/Seasons/Summer/SummerPlants";
 import { AutumnPlants } from "./components/Seasons/Autumn/AutumnPlants";
 import { WinterPlants } from "./components/Seasons/Winter/WinterPlants";
+import { Normas } from "./pages/More/Normas";
+import { EditPost } from "./components/EditPost/EditPost";
+import { DeleteUser } from "./components/DeleteUser/DeleteUser";
+import { SingleComment } from "./components/SingleComment/SingleComment";
+import { PlantComments } from "./components/PlantComments/PlantComments";
+import { AddComment } from "./components/AddComment/AddComment";
 
 const PrivateRoute = ({ children }) => {
   const { token } = useContext(AuthContext);
@@ -44,13 +50,6 @@ function App() {
         <div className="App">
           <Header />
           <div className="switch-container">
-            <span>
-              {darkMode ? (
-                <MdLightMode className="light-mode-icon" />
-              ) : (
-                <MdDarkMode className="dark-mode-icon" />
-              )}
-            </span>
             <label className="switch">
               <input
                 className="checkbox"
@@ -58,7 +57,13 @@ function App() {
                 onChange={toggleTheme}
                 checked={darkMode}
               />
-              <span className="slider"></span>
+              <span className="slider">
+                {darkMode ? (
+                  <MdLightMode className="light-mode-icon" />
+                ) : (
+                  <MdDarkMode className="dark-mode-icon" />
+                )}
+              </span>
             </label>
           </div>
           <Routes>
@@ -66,13 +71,21 @@ function App() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/create" element={<CreatePlant />} />
+            <Route path="/delete-user/:id" element={<DeleteUser />} />
+
             <Route path="/seasons" element={<Seasons />} />
             <Route path="/seasons/spring" element={<SpringPlants />} />
             <Route path="/seasons/summer" element={<SummerPlants />} />
             <Route path="/seasons/autumn" element={<AutumnPlants />} />
             <Route path="/seasons/winter" element={<WinterPlants />} />
+            <Route path="/normas-de-uso" element={<Normas />} />
+
             <Route path="/plants" element={<PlantsList />} />
             <Route path="/plants/:plantId" element={<SinglePlantItem />} />
+            <Route path="/plant/:plantId/update" element={<EditPost />} />
+            <Route path="/comments/:plantId" element={<PlantComments />} />
+            <Route path="/comments/comment/:id" element={<SingleComment />} />
+            <Route path="/comment/:plantId" element={<AddComment />} />
             <Route path="/users" element={<UsersList />} />
             <Route path="/users/:id" element={<UserPage />} />
             <Route

@@ -4,7 +4,7 @@ const selectPlants = async (queryParams) => {
   const pool = getDb();
 
   let sqlQuery =
-    "SELECT p.*, COUNT(f.id) fav FROM plants p LEFT JOIN fav f ON p.id = f.plantId";
+    "SELECT p.*, f.id AS fav, c.id AS comments FROM plants p LEFT JOIN fav f ON p.id = f.plantId LEFT JOIN comments c ON p.id = c.plantId";
   let values = [];
   let clause = " WHERE";
 

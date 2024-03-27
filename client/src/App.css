@@ -11,7 +11,7 @@
   flex-direction: column;
   font-size: 20px;
   overflow-x: hidden;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
 }
 h1,
 h2,
@@ -28,6 +28,10 @@ h3 {
   color: #27ad6a;
 }
 
+img {
+  max-width: 400px;
+  max-height: 500px;
+}
 /* ESTILOS COMUNES EN FORMULARIOS */
 form {
   margin-top: 2rem;
@@ -38,7 +42,11 @@ form {
   text-align: center;
   cursor: pointer;
 }
-
+input {
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px;
+}
 fieldset {
   border: none;
 }
@@ -46,25 +54,34 @@ fieldset > label {
   margin-right: 3%;
 }
 
-/* ESTILOS PARA EL SWITCHER */
+/* ESTILOS PARA EL SWITCHER DARK/LIGHT MODE */
 .switch-container {
-  width: 25%;
+  width: 10%;
   padding: 10px;
-  margin-left: 10px;
   display: flex;
   align-content: center;
+  position: absolute;
+  margin-top: 1rem;
+}
+.light-mode-icon,
+.dark-mode-icon {
+  width: 25px;
+  height: 25px;
+}
+.light-mode-icon,
+.dark-mode-icon :hover {
+  cursor: pointer;
 }
 .light-mode-icon {
-  fill: yellow;
+  fill: rgba(255, 255, 0, 0.866);
 }
 
 .dark-mode-icon {
-  fill: #98c496;
+  fill: #84b881;
 }
 
-.switch {
-  height: 100%;
-  width: 100%;
+.checkbox {
+  display: none;
 }
 
 .dark {

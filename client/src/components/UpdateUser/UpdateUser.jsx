@@ -7,7 +7,7 @@ import { updateUserPropTypes } from "../../utils/customPropTypes";
 
 export const UpdateUser = () => {
   const navigate = useNavigate();
-  const { token } = useContext(AuthContext);
+  const { token, currentUser } = useContext(AuthContext);
   const [newName, setNewName] = useState("");
   const [newEmail, setNewEmail] = useState("");
   const [newPass, setNewPass] = useState("");
@@ -50,6 +50,7 @@ export const UpdateUser = () => {
               type="name"
               id="name"
               value={newName}
+              placeholder={newName || " " + (currentUser && currentUser.name)}
               onChange={(e) => setNewName(e.target.value)}
             ></input>
           </fieldset>
@@ -60,6 +61,7 @@ export const UpdateUser = () => {
               type="email"
               id="email"
               value={newEmail}
+              placeholder={newEmail || " " + (currentUser && currentUser.email)}
               onChange={(e) => setNewEmail(e.target.value)}
             ></input>
           </fieldset>
@@ -75,12 +77,14 @@ export const UpdateUser = () => {
           </fieldset>
           <fieldset>
             <label htmlFor="bio">Biografía</label>
-            <input
+            <textarea
+              className="input-bio"
               type="text"
               id="bio"
               value={newBio}
+              placeholder={newBio || " " + (currentUser && currentUser.bio)}
               onChange={(e) => setNewBio(e.target.value)}
-            ></input>
+            ></textarea>
           </fieldset>
 
           <fieldset>

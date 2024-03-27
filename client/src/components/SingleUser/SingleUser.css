@@ -15,7 +15,7 @@
   margin: 1rem;
 }
 .open .options-icon {
-  opacity: 20%;
+  opacity: 40%;
 }
 .open-options {
   height: 120px;
@@ -43,4 +43,9 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+}
+/* ESTILOS PARA EL BOTÓN DE ENVIAR MENSAJE HASTA QUE ESTÉ DISPONIBLE */
+.send-message {
+  opacity: 20%;
+  text-decoration: line-through;
 }

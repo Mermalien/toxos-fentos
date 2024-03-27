@@ -1,5 +1,6 @@
 .seasons-container {
   height: 100vh;
+  margin: 1px;
 }
 .seasons-page {
   width: 100vw;
@@ -21,23 +22,53 @@
   align-items: start;
   margin-top: 1rem;
 }
+.seasons-btns div {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
 .seasons-btns button {
   height: 100%;
-  background-size: 100% 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.spring-btn {
+.seasons-btns .seasons-p {
+  width: auto;
+  height: fit-content;
+  font-size: 18px;
+  font-style: italic;
+  display: flex;
+  padding-top: 200px;
+  padding-right: 60px;
+}
+.spring-div {
   grid-area: primavera;
   background-image: url("../../images/spring/springbg.jpg");
 }
-.summer-btn {
+.summer-div {
   grid-area: verano;
-  background-image: url("../../images/summer/summerbg.jpg");
+  background-image: url("../../images/summer/flores-verano.jpg");
 }
-.autumn-btn {
+.autumn-div {
   grid-area: otoño;
   background-image: url("../../images/autumn/autumnbg.jpg");
 }
-.winter-btn {
+.winter-div {
   grid-area: invierno;
   background-image: url("../../images/winter/winterbg.jpg");
+}
+@media (min-width: 768px) {
+  .seasons-btns .seasons-p {
+    padding-right: 300px;
+    padding-top: 300px;
+  }
+}
+@media (min-width: 1024px) {
+  .seasons-btns .seasons-p {
+    padding-right: 450px;
+  }
 }

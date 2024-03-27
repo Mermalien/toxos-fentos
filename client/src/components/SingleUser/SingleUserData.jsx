@@ -3,6 +3,7 @@ const baseURL = import.meta.env.VITE_APP_BACKEND;
 import PropTypes from "prop-types";
 
 export const SingleUserData = ({ name, bio, avatar }) => {
+  // TODO => Mostrar/ocultar bio si es muy larga.
   return (
     <div className="list-data">
       <div className="avatar-container">

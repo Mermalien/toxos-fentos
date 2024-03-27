@@ -6,6 +6,9 @@ const selectPlantByName = require("./selectPlantByName");
 const selectPlantImage = require("./selectPlantImage");
 const selectPlants = require("./selectPlants");
 const selectPlantByCategory = require("./selectPlantByCategory");
+const selectPlantByUserId = require("./selectPlantByUserId");
+const updatePlant = require("./updatePlant");
+const updatePlantImage = require("./updatePlantImage");
 
 module.exports = {
   insertPlantInDb,
@@ -16,4 +19,7 @@ module.exports = {
   deletePlantById,
   selectPlantByName,
   selectPlantByCategory,
+  selectPlantByUserId,
+  updatePlant,
+  updatePlantImage,
 };

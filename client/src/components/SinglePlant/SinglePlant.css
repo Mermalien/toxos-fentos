@@ -1,22 +1,27 @@
-.single-plant-container {
-  width: 400px;
-  display: flex;
-  flex-direction: column;
+.single-plant-item {
+  width: 100vw;
+  height: fit-content;
+  border-bottom: solid 1px;
 }
 .single-plant-item button {
-  width: 4rem;
-  height: 3rem;
   background-color: transparent;
-  margin-left: 1rem;
   cursor: pointer;
   border: none;
+  float: right;
 }
-.single-plant-btns {
-  height: 3rem;
-  width: 100%;
+.item-buttons {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 0.5rem;
-  background-color: rgba(230, 230, 250, 0.587);
+  justify-content: flex-end;
+  gap: 1.5rem;
+  margin-right: 10px;
+}
+.is-my-plant {
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .single-plant-item {
+    width: 80vw;
+  }
 }

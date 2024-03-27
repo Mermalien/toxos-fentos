@@ -18,6 +18,11 @@ export const updateUserPropTypes = PropTypes.shape({
   avatar: PropTypes.string,
 });
 
+export const deleteUserPropTypes = PropTypes.shape({
+  id: PropTypes.number.isRequired,
+  email: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+});
 export const plantItemPropTypes = PropTypes.shape({
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
@@ -28,7 +33,24 @@ export const plantItemPropTypes = PropTypes.shape({
   userId: PropTypes.number.isRequired,
 });
 
+export const updatePlantPropTypes = PropTypes.shape({
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.optional,
+  description: PropTypes.string.optional,
+  image: PropTypes.string,
+  category: PropTypes.string.optional,
+  isFav: PropTypes.bool,
+  userId: PropTypes.number.isRequired,
+});
+
 export const deletePlantPropTypes = PropTypes.shape({
   userId: PropTypes.number.isRequired,
   plantId: PropTypes.number.isRequired,
+});
+
+export const commentItemPropTypes = PropTypes.shape({
+  id: PropTypes.number.isRequired,
+  userId: PropTypes.number.isRequired,
+  plantId: PropTypes.number.isRequired,
+  text: PropTypes.string.isRequired,
 });

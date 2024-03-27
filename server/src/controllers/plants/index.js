@@ -4,6 +4,7 @@ const getAllPlants = require("./getAllPlants");
 const getByName = require("./getByName");
 const getSinglePlant = require("./getSinglePlant");
 const getPlantByCategory = require("./getPlantByCategory");
+const updatePlantData = require("./updatePlantData");
 
 module.exports = {
   createPlant,
@@ -12,4 +13,5 @@ module.exports = {
   getSinglePlant,
   getByName,
   getPlantByCategory,
+  updatePlantData,
 };

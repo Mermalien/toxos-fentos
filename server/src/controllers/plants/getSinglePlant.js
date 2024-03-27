@@ -14,9 +14,9 @@ const getSinglePlant = async (req, res, next) => {
     if (!plant) {
       generateError("La planta que buscas no existe", 404);
     }
-
     const plantImage = await selectPlantImage(plantId);
     plant.images = plantImage;
+
     res.send({
       status: "Esta es la planta:",
       data: plant,

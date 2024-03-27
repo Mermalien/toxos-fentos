@@ -4,17 +4,18 @@ const { validateSchema, generateError } = require("../../utils");
 
 const getByName = async (req, res, next) => {
   try {
-    const name = req.query;
-    await validateSchema(filterPlantSchema, name);
+    const title = req.query;
+    await validateSchema(filterPlantSchema, title);
 
-    const plantsByName = await selectPlantByName(name);
-    if (!plantsByName) {
-      generateError("No hay resultados");
+    const plantByName = await selectPlantByName(title);
+    console.log(plantByName);
+    if (!plantByName) {
+      generateError("No hay resultados con ese nombre");
     }
 
     res.send({
       status: "Resultado de la búsqueda por nombre: ",
-      data: plantsByName,
+      data: plantByName,
     });
   } catch (error) {
     next(error);

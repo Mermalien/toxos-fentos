@@ -1,29 +1,40 @@
 import "./UsersList.css";
-import { userPropTypes } from "../../utils/customPropTypes";
 import PropTypes from "prop-types";
+import { userPropTypes } from "../../utils/customPropTypes";
+import { UsersSearcher } from "../Searcher/UsersSearcher";
 import { SingleUser } from "../SingleUser/SingleUser";
 import { useState } from "react";
-import { UsersSearcher } from "../Searcher/UsersSearcher";
 
-export const UsersList = () => {
+export const UsersList = ({ setUser }) => {
   const [allUsers, setAllUsers] = useState([]);
-  console.log("Lista de usuarios", allUsers);
+  console.log("UsersList", allUsers);
 
   return (
     <div className="usersList">
-      <UsersSearcher setAllUsers={setAllUsers} className="list-searcher" />
-      <h2>Resultados de la búsqueda</h2>
+      <UsersSearcher
+        allUsers={allUsers}
+        setAllUsers={setAllUsers}
+        className="list-searcher"
+      />
+      <div className="hr">
+        <hr />
+      </div>
 
-      {allUsers.map((user) => (
-        <li key={user.name}>
-          <SingleUser user={user} />
-        </li>
-      ))}
+      <ol>
+        {allUsers &&
+          allUsers.map((user, id) => {
+            return (
+              <li key={id}>
+                <SingleUser user={user} setUser={setUser} />
+              </li>
+            );
+          })}
+      </ol>
     </div>
   );
 };
 UsersList.propTypes = {
-  user: userPropTypes,
+  setUser: PropTypes.func,
   allUsers: PropTypes.arrayOf(userPropTypes),
   setAllUsers: PropTypes.func,
 };

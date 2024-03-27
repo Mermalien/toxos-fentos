@@ -1,7 +1,8 @@
+import "./Login.css";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { loginUserService } from "../../services/userService";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
@@ -27,7 +28,6 @@ export const LoginPage = () => {
 
   return (
     <section className="login-page">
-      <h1>Inicia sesión</h1>
       <form onSubmit={handleLogin} className="login-form">
         <fieldset>
           <label htmlFor="email">Email</label>
@@ -41,7 +41,7 @@ export const LoginPage = () => {
           />
         </fieldset>
         <fieldset>
-          <label htmlFor="pass">Password</label>
+          <label htmlFor="pass">Contraseña</label>
           <input
             type="password"
             name="pass"
@@ -52,7 +52,12 @@ export const LoginPage = () => {
           />
         </fieldset>
 
-        <button className="login-button">Inicia sesión</button>
+        <button className="login-button">Iniciar sesión</button>
+        <section className="link-reg">
+          <Link to={"/register"} className="link">
+            <p>¿No tienes una cuenta? Regístrate aquí</p>
+          </Link>
+        </section>
         {errorMsg && <p>{errorMsg}</p>}
       </form>
     </section>

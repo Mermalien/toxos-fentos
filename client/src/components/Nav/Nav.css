@@ -21,28 +21,24 @@
 }
 
 .open .bar {
-  background-color: #27ad6a81;
+  background-color: #abbdb481;
 }
 
 .menu {
-  list-style-type: none;
-  padding: 0;
-  margin: 10px;
+  position: absolute;
+  width: 250px;
+  height: 150px;
+  padding: 20px;
+  margin: 20px;
   font-size: 20px;
-  width: 60%;
-  display: flex;
-  text-align: left;
-}
-
-.menu li {
-  border-radius: 12px;
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  background-color: #27ad6a8f;
-  color: #000000;
-  justify-content: center;
+  justify-content: space-between;
+  background-color: rgba(78, 130, 91, 0.862);
+  box-shadow: 0 0 40px grey;
+  border-radius: 3px 20px;
 }
+
 .menu-items {
   display: none;
 }
@@ -50,15 +46,26 @@
   .hamburguer {
     display: none;
   }
-
   .menu-items {
+    margin-top: 2rem;
+    margin-left: 7vw;
+    width: 20%;
+    height: 25vh;
     display: flex;
-    justify-content: space-evenly;
-    width: 100%;
+    flex-direction: column;
+    position: fixed;
   }
-
-  .menu-items span {
-    margin-right: 20px;
-    color: #27ad6a;
+  .menu-items-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px;
+  }
+}
+@media (min-width: 1080px) {
+  .menu-items {
+    margin-left: 11vw;
   }
 }

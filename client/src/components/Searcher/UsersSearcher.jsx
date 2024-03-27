@@ -30,7 +30,7 @@ export const UsersSearcher = ({ setAllUsers }) => {
         type="search"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        placeholder="Encuentra gente..."
+        placeholder="Buscar"
       />
       <button type="button" onClick={() => handleSearchPeople()}>
         <RiUserSearchLine className="react-icon" />

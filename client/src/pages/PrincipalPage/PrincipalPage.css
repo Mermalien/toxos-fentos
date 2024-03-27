@@ -1,35 +1,46 @@
-.principal-page-container {
+.principal-page {
   box-sizing: content-box;
   width: 100vw;
+  height: fit-content;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 .searchers {
-  height: 4rem;
-  width: 100vw;
-  position: relative;
-  margin-bottom: 1.6rem;
-}
-.searchers .go-search-icon {
-  height: 5rem;
-  width: 100%;
+  width: 95vw;
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  padding: 1.3rem;
 }
 
 /* CAMBIAR ESTE COLOR */
 .isOpen .react-icon {
   fill: rgba(132, 165, 132, 0.631);
 }
-.searchers-components {
-  position: absolute;
-  margin-left: 1.5rem;
+.plants-search {
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 15px;
+  flex-wrap: 1rem;
 }
 .section-list {
-  width: 100%;
+  width: 80%;
+  display: flex;
 }
-.users-search {
-  border: solid 1px;
-  border-radius: 10px;
+.not-logged {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 1rem;
+  height: 100vh;
+  width: 100vw;
+}
+
+.login-section {
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+}
+@media (min-width: 768px) {
 }

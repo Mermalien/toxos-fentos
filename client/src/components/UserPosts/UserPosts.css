@@ -1,0 +1,22 @@
+.user-plants-container {
+  width: 100vw;
+  height: fit-content;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.user-plants-list {
+  width: 100vw;
+  height: 100%;
+  list-style: none;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.user-post-item {
+  width: 33vw;
+  height: 50vh;
+}
+.user-post-image {
+  width: 100%;
+  height: 200px;
+}

@@ -1,12 +1,12 @@
 import "./PlantsList.css";
 import { SinglePlantItem } from "../SinglePlant/SinglePlantItem";
 import PropTypes from "prop-types";
+import { commentItemPropTypes } from "../../utils/customPropTypes";
 
 export const PlantsList = ({ plants, setPlants }) => {
   const sortedItems = plants
     .slice()
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-  console.log(sortedItems);
   return (
     <div className="plants-list">
       {sortedItems.map((plant) => {
@@ -28,4 +28,5 @@ PlantsList.propTypes = {
   map: PropTypes.func,
   plants: PropTypes.array,
   setPlants: PropTypes.func,
+  comments: PropTypes.arrayOf(commentItemPropTypes),
 };

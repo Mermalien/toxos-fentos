@@ -1,27 +1,54 @@
 import "./Seasons.css";
 import { Link } from "react-router-dom";
+import { SeasonsCountdown } from "./SeasonsCountdown/SeasonCountdown";
 
 export const Seasons = () => {
   return (
     <div id="seasons" className="seasons-container">
       <div className="seasons-page">
-        <h2>Plantas de temporada</h2>
+        <SeasonsCountdown />
         <div className="seasons-btns">
-          <button className="spring-btn">
-            <Link to={"/seasons/spring"}>Primavera</Link>
-          </button>
+          <div className="spring-div">
+            <button className="spring-btn">
+              <p>
+                <Link to={"/seasons/spring"} className="seasons-p">
+                  PRIMAVERA
+                </Link>
+              </p>
+            </button>
+          </div>
 
-          <button className="summer-btn">
-            <Link to={"/seasons/summer"}>Verano</Link>
-          </button>
+          <div className="summer-div">
+            <button className="summer-btn">
+              <p>
+                {" "}
+                <Link to={"/seasons/summer"} className="seasons-p">
+                  VERANO
+                </Link>
+              </p>
+            </button>
+          </div>
 
-          <button className="autumn-btn">
-            <Link to={"/seasons/autumn"}>Otoño</Link>
-          </button>
+          <div className="autumn-div">
+            <button className="autumn-btn">
+              <p>
+                {" "}
+                <Link to={"/seasons/autumn"} className="seasons-p">
+                  OTOÑO
+                </Link>
+              </p>
+            </button>
+          </div>
 
-          <button className="winter-btn">
-            <Link to={"/seasons/winter"}>Invierno</Link>
-          </button>
+          <div className="winter-div">
+            <button className="winter-btn">
+              <p>
+                <Link to={"/seasons/winter"} className="seasons-p">
+                  INVIERNO
+                </Link>
+              </p>
+            </button>
+          </div>
         </div>
       </div>
     </div>

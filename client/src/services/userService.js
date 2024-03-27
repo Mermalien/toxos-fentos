@@ -1,4 +1,5 @@
 const baseURL = import.meta.env.VITE_APP_BACKEND;
+import { getToken } from "../utils/getToken";
 
 // Registro
 export const registerUserService = async (formData) => {
@@ -66,7 +67,8 @@ export const getAllUsersService = async (name = "") => {
 };
 
 // Mi lista de favoritos
-export const getMyFavoritesService = async (token) => {
+export const getMyFavoritesService = async () => {
+  const token = getToken();
   const response = await fetch(`${baseURL}/user/favs`, {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -74,4 +76,19 @@ export const getMyFavoritesService = async (token) => {
   });
   const body = await response.json();
   return body.data;
+};
+
+// Eliminar usuario
+export const deleteUserService = async ({ id, email, password }) => {
+  const token = getToken();
+  const response = await fetch(`${baseURL}/delete-user/${id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email, password }),
+  });
+  const body = await response.json();
+  return body;
 };

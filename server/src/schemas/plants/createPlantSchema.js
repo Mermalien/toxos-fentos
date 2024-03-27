@@ -13,8 +13,9 @@ const createPlantSchema = Joi.object({
     "any.required": "Descripcion es requerido",
     "string.base": "Debe ser una cadena de texto",
   }),
-  category: Joi.string().min(2).max(200).required(),
-  flower: Joi.boolean(),
+  category: Joi.string().min(2).max(200).required().messages({
+    "any.required": "Debes elegir una categoría",
+  }),
 });
 
 module.exports = createPlantSchema;

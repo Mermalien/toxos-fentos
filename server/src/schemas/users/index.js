@@ -3,6 +3,7 @@ const createUserSchema = require("./createUserSchema");
 const loginUserSchema = require("./loginUserSchema");
 const updateUserSchema = require("./updateUserSchema");
 const filterUserSchema = require("./filterUserSchema");
+const deleteUserSchema = require("./deleteUserSchema");
 
 module.exports = {
   userIdSchema,
@@ -10,4 +11,5 @@ module.exports = {
   loginUserSchema,
   updateUserSchema,
   filterUserSchema,
+  deleteUserSchema,
 };

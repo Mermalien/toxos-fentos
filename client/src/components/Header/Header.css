@@ -2,21 +2,17 @@
 
 header {
   padding: 1rem;
-  width: 100%;
+  width: 100vw;
   height: 100px;
-  /*background-color: #e9f5ed;*/
   display: flex;
   flex-direction: column;
-  gap: 3rem;
   align-items: center;
   justify-content: center;
   box-sizing: content-box;
 }
 .logo-container {
-  width: 100px;
-  height: 15%;
+  width: fit-content;
   display: flex;
-  flex-grow: 0.5;
   justify-content: center;
   align-content: center;
   margin-top: 1rem;
@@ -56,7 +52,7 @@ header {
   header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     height: 180px;
   }
   .menu-div {
@@ -67,6 +63,8 @@ header {
   }
   .logo-container {
     margin-bottom: 3rem;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 10%;
   }
 }

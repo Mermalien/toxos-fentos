@@ -1,0 +1,25 @@
+.single-comment {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 90vw;
+  border-bottom: solid 1px;
+}
+
+.comment-body {
+  width: 100%;
+}
+.user-comment-data {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: left;
+}
+.comment-text {
+  display: flex;
+  flex-wrap: wrap;
+}
+.user-comment-img {
+  width: 40%;
+  height: 40%;
+}

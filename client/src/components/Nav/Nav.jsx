@@ -22,24 +22,26 @@ export const Nav = () => {
         <div className="bar"></div>
       </div>
       {open && (
-        <ol className="menu" onClick={handleMenuClick}>
-          <li>
-            {" "}
-            <Auth />
-            <Link to={"seasons"} className="link">
-              Plantas de temporada🌸
-            </Link>
-          </li>
-        </ol>
+        <div className="menu" onClick={handleMenuClick}>
+          {" "}
+          <Auth />
+          <Link to={"seasons"} className="link">
+            Plantas de temporada
+          </Link>
+          <Link to={"/normas-de-uso"} className="link">
+            Normas de uso
+          </Link>
+        </div>
       )}
       <div className="menu-items">
-        <div className="auth-nav">
-          <span>
-            <Auth />
-            <Link to={"seasons"} className="link">
-              Plantas de temporada🌸
-            </Link>
-          </span>
+        <div className="menu-items-nav">
+          <Auth />
+          <Link to={"seasons"} className="link">
+            Plantas de temporada🌸
+          </Link>
+          <Link to={"/normas-de-uso"} className="link">
+            Normas de uso
+          </Link>
         </div>
       </div>
     </nav>

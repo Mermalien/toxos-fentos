@@ -6,6 +6,7 @@ const updateUserById = require("./updateUserById");
 const updateAvatar = require("./updateAvatar");
 const selectAllUsers = require("./selectAllUsers");
 const selectUserByName = require("./selectUserByName");
+const deleteUserById = require("./deleteUserById");
 
 module.exports = {
   insertUserInDb,
@@ -16,4 +17,5 @@ module.exports = {
   updateUserById,
   updateAvatar,
   selectUserByName,
+  deleteUserById,
 };

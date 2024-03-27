@@ -1,5 +1,10 @@
 .plants-searcher {
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.plants-searcher button {
+  width: 50px;
 }
 .users-searcher {
   display: flex;
@@ -11,12 +16,9 @@
   width: 250px;
   border-radius: 10px;
   border: solid 1px green;
+  padding: 10px;
 }
 .users-searcher .react-icon {
   width: 28px;
   height: 28px;
-}
-.plants-searcher input:focus,
-.users-searcher input:focus {
-  padding: 10px;
 }

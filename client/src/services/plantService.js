@@ -31,6 +31,20 @@ export const createPlantService = async (FormData) => {
   return body.data;
 };
 
+// Editar publicación
+export const updatePlantService = async (FormData, plantId) => {
+  const token = getToken();
+  const response = await fetch(`${baseURL}/plant/${plantId}/update`, {
+    method: "PUT",
+    body: FormData,
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const body = await response.json();
+  return body.data;
+};
+
 // Eliminar publicación
 export const deletePlantService = async (plantId) => {
   const token = getToken();

@@ -1,23 +1,16 @@
 .plants-list {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 2rem;
-  align-items: center;
+  width: 100vw;
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-.plants-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
   list-style: none;
 }
 
 @media (min-width: 768px) {
   .plants-list {
     margin: 1rem;
-    display: flex;
-    flex-direction: row;
   }
 }

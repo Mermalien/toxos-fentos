@@ -8,7 +8,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 
 const baseURL = import.meta.env.VITE_APP_BACKEND;
 
-export const MyFavs = () => {
+export const MyFavs = ({ plant }) => {
   const { token } = useContext(AuthContext);
   const { favs, loading, error, refetch } = useMyFavs(token);
 
@@ -22,6 +22,7 @@ export const MyFavs = () => {
   const handleDeleteList = async (plantId) => {
     try {
       await handleFavService(plantId);
+      localStorage.setItem(`fav_${plant.id}`, JSON.stringify(!favs));
       refetch();
     } catch (error) {
       throw new Error(error.message);
@@ -32,20 +33,24 @@ export const MyFavs = () => {
   return (
     <div>
       <h2>Mis favoritos</h2>
-      <ol className="my-favorites">
-        {sortedFavs.map((favItem) => {
-          return (
-            <li key={favItem.plantId} className="favorite-item">
-              <p className="title-fav"> {favItem.title} </p>
-              <img src={`${baseURL}/${favItem.image}`}></img>
-              <p> {favItem.description}</p>
-              <button onClick={() => handleDeleteList(favItem.plantId)}>
-                <RiDeleteBinLine className="react-icon" />
-              </button>
-            </li>
-          );
-        })}
-      </ol>
+      {favs ? (
+        <ol className="my-favorites">
+          {sortedFavs.map((favItem) => {
+            return (
+              <li key={favItem.plantId} className="favorite-item">
+                <p className="title-fav"> {favItem.title} </p>
+                <img src={`${baseURL}/${favItem.image}`}></img>
+                <p> {favItem.description}</p>
+                <button onClick={() => handleDeleteList(favItem.plantId)}>
+                  <RiDeleteBinLine className="react-icon" />
+                </button>
+              </li>
+            );
+          })}
+        </ol>
+      ) : (
+        <p>Esta carpeta está vacía.</p>
+      )}
     </div>
   );
 };

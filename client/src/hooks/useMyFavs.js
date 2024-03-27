@@ -10,7 +10,7 @@ export const useMyFavs = (token) => {
   useEffect(() => {
     const loadFavs = async () => {
       try {
-        const data = await getMyFavoritesService(token);
+        const data = await getMyFavoritesService();
         setFavs(data || []);
       } catch (error) {
         setError(error.message);
@@ -21,5 +21,5 @@ export const useMyFavs = (token) => {
     setRefetch(() => loadFavs);
     loadFavs();
   }, [token]);
-  return { favs, loading, error, refetch };
+  return { favs, setFavs, loading, error, refetch };
 };
