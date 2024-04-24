@@ -1,3 +1,4 @@
+import "./Register.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { registerUserService } from "../../services/userService";
@@ -44,8 +45,6 @@ export const RegisterPage = () => {
   return (
     <div className="register-page">
       <section className="register">
-        <h2>Registro</h2>
-
         <form onSubmit={handleRegister} className="register-form">
           <fieldset>
             <label htmlFor="name">Nombre</label>

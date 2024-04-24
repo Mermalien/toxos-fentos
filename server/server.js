@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
 
 // Controllers de usuario
@@ -44,7 +45,6 @@ const {
 const getPlantComments = require("./src/controllers/comments/getPlantComments");
 
 const app = express();
-const bodyParser = require("body-parser");
 const { PORT } = process.env;
 
 app.use(cors());

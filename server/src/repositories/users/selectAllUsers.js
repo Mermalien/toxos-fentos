@@ -3,7 +3,7 @@ const getDb = require("../../database/getDb");
 const selectAllUsers = async (queryParams) => {
   const pool = getDb();
   let sqlQuery =
-    "SELECT users.name, users.avatar, users.bio, users.createdAt, plants.title, plants.image, plants.description FROM users";
+    "SELECT users.id, users.name, users.avatar, users.bio, users.createdAt, plants.title, plants.image, plants.description FROM users";
   sqlQuery += " LEFT JOIN plants ON users.id = plants.userId";
   let values = [];
   let whereClause = " WHERE";

@@ -84,8 +84,8 @@ export const deleteUserService = async ({ id, email, password }) => {
   const response = await fetch(`${baseURL}/delete-user/${id}`, {
     method: "DELETE",
     headers: {
+      "Content-type": "application/json",
       Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
   });

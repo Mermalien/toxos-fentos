@@ -5,11 +5,18 @@ import { MdOutlineExpandMore } from "react-icons/md";
 import { MdOutlineExpandLess } from "react-icons/md";
 const baseURL = import.meta.env.VITE_APP_BACKEND;
 
-export const PlantBody = ({ title, description, image, category }) => {
+export const PlantBody = ({
+  creator_name,
+  title,
+  description,
+  image,
+  category,
+}) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
   return (
     <div className="plant-body">
+      <div className="plant-creator">{creator_name}</div>
       <div className="plant-image-container">
         {image && (
           <img
@@ -40,6 +47,7 @@ export const PlantBody = ({ title, description, image, category }) => {
 };
 
 PlantBody.propTypes = {
+  creator_name: PropTypes.string,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,

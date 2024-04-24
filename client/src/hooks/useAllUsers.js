@@ -22,8 +22,5 @@ export const useAllUsers = () => {
     getUsers();
   }, [error]);
 
-  const deleteUser = (id) => {
-    setAllUsers(allUsers.filter((user) => user.id !== id));
-  };
-  return { allUsers, setAllUsers, deleteUser, loading, error };
+  return { allUsers, setAllUsers, loading, error };
 };

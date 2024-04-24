@@ -9,7 +9,7 @@ npm run dev (run app)
 - 🥀 : QUIERO HACER
 - 🍁 : TIENE ERRORES
 
-- 🍀 Registro.
+- 🍀 Registro. (El usuario recibe un email cuando se registra).
 - 🍀 Login.
 - 🍀 Ver tus datos de usuario.
 - 🍀 Actualizar datos del usuario.

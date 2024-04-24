@@ -19,9 +19,7 @@ export const SingleComment = ({ comment }) => {
   const handleDeleteComment = async () => {
     try {
       setError("");
-      console.log("CLICK EN ELIMINAR COMENTARIO", commentId);
       const body = await deleteCommentService(comment.id);
-      console.log(body);
       if (!body || body.status === "error") {
         throw new Error(body.message);
       }

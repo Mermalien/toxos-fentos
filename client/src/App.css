@@ -92,3 +92,8 @@ fieldset > label {
   background-color: #e9f5ed;
   color: #333;
 }
+@media (min-width: 835px) {
+  form {
+    font-size: 23px;
+  }
+}

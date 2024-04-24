@@ -6,6 +6,7 @@ import {
   commentItemPropTypes,
   plantItemPropTypes,
 } from "../../utils/customPropTypes";
+import { MdOutlineExpandMore } from "react-icons/md";
 
 export const PlantComments = ({ plant, comments }) => {
   const [openComments, setOpenComments] = useState(false);
@@ -13,6 +14,7 @@ export const PlantComments = ({ plant, comments }) => {
   const commentsOfPlant = comments.filter(
     (comment) => comment.plantId === plant.id
   );
+
   const seeComments = () => {
     setOpenComments(!openComments);
   };
@@ -24,7 +26,14 @@ export const PlantComments = ({ plant, comments }) => {
 
   return (
     <div className="comments-container">
-      <h4 onClick={seeComments}>Comentarios</h4>
+      <h4 onClick={seeComments}>
+        Comentarios{" "}
+        {commentsOfPlant.length >= 1 ? (
+          <MdOutlineExpandMore className="react-icon" />
+        ) : (
+          <p>No hay comentarios todavía.</p>
+        )}
+      </h4>
       <div className="open-comments">
         {openComments && (
           <ol>

@@ -13,7 +13,6 @@ export const AddComment = ({ plant }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  console.log("comentario a la planta", plantId);
   console.log("comentario de", userId);
 
   const handleNewComment = async (e) => {

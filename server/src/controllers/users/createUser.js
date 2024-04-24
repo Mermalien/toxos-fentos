@@ -5,7 +5,12 @@ const {
   insertUserInDb,
 } = require("../../repositories/users");
 const { createUserSchema } = require("../../schemas/users");
-const { generateError, validateSchema, saveImg } = require("../../utils");
+const {
+  generateError,
+  validateSchema,
+  saveImg,
+  sendMail,
+} = require("../../utils");
 
 const createUser = async (req, res, next) => {
   try {
@@ -35,6 +40,11 @@ const createUser = async (req, res, next) => {
       avatarName,
     });
 
+    await sendMail(
+      "Bienvenido a Toxos&Fentos!",
+      `<p>Gracias por registrarte, nos alegra mucho tenerte por aquí.</p> <a href="http://localhost:3001/login">Inicia sesión para comenzar.</a>`,
+      email
+    );
     res.status(201).send({
       status: "Registro exitoso",
       data: { id: insertUser, name, email, bio, avatar: avatarName },

@@ -17,7 +17,6 @@ export const PrincipalPage = () => {
   const { currentUser } = useContext(AuthContext);
 
   if (error) return <ErrorMessage />;
-  if (loading) return <LoadingComponent />;
 
   return (
     <div className="principal-page">
@@ -48,6 +47,7 @@ export const PrincipalPage = () => {
           </section>
         </div>
       )}
+      {loading && <LoadingComponent />}
     </div>
   );
 };
