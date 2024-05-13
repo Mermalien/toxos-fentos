@@ -34,6 +34,7 @@ export const SingleComment = ({ comment }) => {
     <div className="single-comment">
       <ol>
         <CommentBody
+          userId={comment.userId}
           text={comment.text}
           name={comment.name}
           avatar={comment.avatar}

@@ -7,6 +7,7 @@ const updateAvatar = require("./updateAvatar");
 const selectAllUsers = require("./selectAllUsers");
 const selectUserByName = require("./selectUserByName");
 const deleteUserById = require("./deleteUserById");
+const selectUserAvatar = require("./selectUserAvatar");
 
 module.exports = {
   insertUserInDb,
@@ -18,4 +19,5 @@ module.exports = {
   updateAvatar,
   selectUserByName,
   deleteUserById,
+  selectUserAvatar,
 };

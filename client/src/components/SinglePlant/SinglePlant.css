@@ -1,7 +1,11 @@
+.single-plant-container {
+  background-color: #78a38971;
+  border-radius: 16px;
+  padding: 0.5rem;
+}
 .single-plant-item {
   width: 100vw;
   height: fit-content;
-  border-bottom: solid 1px;
 }
 .single-plant-item button {
   background-color: transparent;
@@ -22,6 +26,6 @@
 
 @media (min-width: 768px) {
   .single-plant-item {
-    width: 80vw;
+    width: 60vw;
   }
 }

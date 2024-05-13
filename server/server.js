@@ -45,6 +45,7 @@ const {
 const getPlantComments = require("./src/controllers/comments/getPlantComments");
 
 const app = express();
+
 const { PORT } = process.env;
 
 app.use(cors());

@@ -4,6 +4,8 @@ import { updateDataService } from "../../services/userService";
 import { AuthContext } from "../../context/AuthContext";
 import "./UpdateUser.css";
 import { updateUserPropTypes } from "../../utils/customPropTypes";
+import { FaRegEyeSlash } from "react-icons/fa";
+import { FaRegEye } from "react-icons/fa";
 
 export const UpdateUser = () => {
   const navigate = useNavigate();
@@ -11,6 +13,7 @@ export const UpdateUser = () => {
   const [newName, setNewName] = useState("");
   const [newEmail, setNewEmail] = useState("");
   const [newPass, setNewPass] = useState("");
+  const [showPass, setShowPass] = useState(false);
   const [newBio, setNewBio] = useState("");
   const [newAvatar, setNewAvatar] = useState("");
   const [error, setError] = useState("");
@@ -66,14 +69,25 @@ export const UpdateUser = () => {
             ></input>
           </fieldset>
 
-          <fieldset>
+          <fieldset className="pass-fieldset">
             <label htmlFor="pass1">Contraseña</label>
             <input
-              type="password"
-              id="pass1"
+              type={showPass ? "text" : "password"}
+              id="pass"
               value={newPass}
               onChange={(e) => setNewPass(e.target.value)}
             ></input>
+            <button
+              type="button"
+              className="show-pass-btn"
+              onClick={() => setShowPass(!showPass)}
+            >
+              {showPass ? (
+                <FaRegEyeSlash className="show-pass-btn" />
+              ) : (
+                <FaRegEye className="show-pass-btn" />
+              )}
+            </button>
           </fieldset>
           <fieldset>
             <label htmlFor="bio">Biografía</label>

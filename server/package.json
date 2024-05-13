@@ -26,6 +26,7 @@
     "node-mailjet": "^6.0.5",
     "path": "^0.12.7",
     "sharp": "^0.33.0",
+    "socket.io": "^4.7.5",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

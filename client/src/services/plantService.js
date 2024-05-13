@@ -14,7 +14,7 @@ export const listPlantsService = async (title = "", category = "") => {
 export const getSinglePlantService = async (plantId) => {
   const response = await fetch(`${baseURL}/plants/${plantId}`);
   const body = await response.json();
-  return body;
+  return body.data;
 };
 
 // Publicar nuevo

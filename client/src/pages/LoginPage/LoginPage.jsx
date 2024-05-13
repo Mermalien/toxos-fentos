@@ -3,12 +3,15 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { loginUserService } from "../../services/userService";
 import { Link, useNavigate } from "react-router-dom";
+import { FaRegEyeSlash } from "react-icons/fa";
+import { FaRegEye } from "react-icons/fa";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPass, setShowPass] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
   const handleLogin = async (e) => {
@@ -43,13 +46,23 @@ export const LoginPage = () => {
         <fieldset>
           <label htmlFor="pass">Contraseña</label>
           <input
-            type="password"
+            type={showPass ? "text" : "password"}
             name="pass"
             id="pass"
             value={password}
             required
             onChange={(e) => setPassword(e.target.value)}
           />
+          <button
+            className="show-pass-btn"
+            onClick={() => setShowPass(!showPass)}
+          >
+            {showPass ? (
+              <FaRegEyeSlash className="show-pass-btn" />
+            ) : (
+              <FaRegEye className="show-pass-btn" />
+            )}
+          </button>
         </fieldset>
 
         <button className="login-button">Iniciar sesión</button>

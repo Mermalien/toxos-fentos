@@ -7,7 +7,7 @@ export const Seasons = () => {
     <div id="seasons" className="seasons-container">
       <div className="seasons-page">
         <SeasonsCountdown />
-        <div className="seasons-btns">
+        <div className="seasons-divs">
           <div className="spring-div">
             <button className="spring-btn">
               <p>

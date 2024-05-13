@@ -10,7 +10,7 @@ export const Normas = () => {
     {
       title: "Contenido centrado en plantas",
       description:
-        "Todos los posts deben estar relacionados con el mundo de las plantas, ya sea información sobre cuidado, fotografías de plantas, jardinería, paisajismo, arte inspirado en plantas, etc. Pueden aparecer personas/animales en las fotos, pero recuerda que las plantas son las protagonistas aquí.",
+        "Las publicaciones deben estar relacionadas con el mundo de las plantas, ya sea información sobre cuidado, fotografías de plantas, jardinería, paisajismo, arte inspirado en plantas, etc. Pueden aparecer personas/animales, pero recuerda que las plantas son las protagonistas aquí.",
     },
     {
       title: "Respeto hacia las plantas",
@@ -79,8 +79,11 @@ export const Normas = () => {
         <ol>
           {allRules.map((item, index) => {
             return (
-              <li key={index}>
-                <strong>{item.title}</strong>: {item.description}
+              <li key={index} className="norma">
+                <p className="normas-title">
+                  <strong>{item.title.toUpperCase()}</strong>
+                </p>{" "}
+                <p className="normas-description">{item.description}</p>
               </li>
             );
           })}

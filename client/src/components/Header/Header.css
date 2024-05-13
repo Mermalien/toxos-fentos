@@ -56,10 +56,9 @@ header {
     height: 180px;
   }
   .menu-div {
-    margin-top: 1rem;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: right;
+    margin: 2rem;
   }
   .logo-container {
     margin-bottom: 3rem;

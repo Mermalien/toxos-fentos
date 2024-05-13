@@ -1,5 +1,24 @@
+.normas {
+  height: 100vh;
+  margin: 1rem;
+  gap: 1rem;
+  padding-top: 1.5rem;
+}
 .normas ol {
+  height: 100%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+}
+.norma {
+  margin: 15px;
+  text-align: center;
+}
+.normas-title {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 15px;
 }

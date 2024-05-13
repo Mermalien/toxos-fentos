@@ -2,6 +2,7 @@ const {
   selectPlantById,
   selectPlantImage,
 } = require("../../repositories/plants");
+const { selectUserAvatar } = require("../../repositories/users");
 const { plantIdSchema } = require("../../schemas/plants");
 const { validateSchema, generateError } = require("../../utils");
 

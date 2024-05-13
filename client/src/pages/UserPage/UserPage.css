@@ -58,7 +58,8 @@
   background-color: transparent;
 }
 .list-of-posts {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
 }

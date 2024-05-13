@@ -39,11 +39,11 @@
   justify-content: center;
 }
 .link-reg p {
-  font-size: 20px;
+  font-size: 18px;
   color: white;
   text-decoration: underline;
 }
-@media (min-width: 835px) {
+@media (min-width: 768px) {
   .login-page {
     background-size: 50%;
     background-position: left;

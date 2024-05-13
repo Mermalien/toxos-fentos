@@ -4,8 +4,9 @@ import { useState } from "react";
 const baseURL = import.meta.env.VITE_APP_BACKEND;
 import { MdOutlineExpandMore } from "react-icons/md";
 import { MdOutlineExpandLess } from "react-icons/md";
+import { Link } from "react-router-dom";
 
-export const CommentBody = ({ text, name, avatar, createdAt }) => {
+export const CommentBody = ({ userId, text, name, avatar, createdAt }) => {
   const [showCommentContent, setShowCommentContent] = useState(false);
 
   // Días transcurridos desde que se publicó el comentario
@@ -31,7 +32,7 @@ export const CommentBody = ({ text, name, avatar, createdAt }) => {
   return (
     <div className="comment-body">
       <div className="user-comment-data">
-        <p>{name}</p>
+        <Link to={`/users/${userId}`}>{name}</Link>
         <section>
           {avatar && (
             <img
@@ -63,6 +64,7 @@ export const CommentBody = ({ text, name, avatar, createdAt }) => {
   );
 };
 CommentBody.propTypes = {
+  userId: PropTypes.number,
   text: PropTypes.string,
   name: PropTypes.string,
   avatar: PropTypes.string,

@@ -19,7 +19,6 @@ export const UserPage = () => {
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [options, setOptions] = useState(false);
-  console.log("userPageId", id);
 
   useEffect(() => {
     const getUserPage = async () => {
@@ -27,7 +26,6 @@ export const UserPage = () => {
         setErrorMsg("");
         setLoading(true);
         const userData = await getUsersDataService(id, token);
-        console.log("user data", userData);
         setUser(userData);
       } catch (error) {
         setErrorMsg(error.message);

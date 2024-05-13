@@ -1,7 +1,8 @@
 import "./UserPosts.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useUser } from "../../hooks/useUser";
 import { useAllPlants } from "../../hooks/useAllPlants";
+import { LoadingComponent } from "../Loading/LoadingComponent";
 const baseURL = import.meta.env.VITE_APP_BACKEND;
 
 export const UserPosts = () => {
@@ -20,11 +21,14 @@ export const UserPosts = () => {
           userPlants?.map((plant) => {
             return (
               <li key={plant.id} className="user-post-item">
-                <img
-                  src={`${baseURL}/${plant?.image}`}
-                  alt={plant.title}
-                  className="user-post-image"
-                ></img>
+                <Link to={`/plants/${plant.id}`}>
+                  {" "}
+                  <img
+                    src={`${baseURL}/${plant?.image}`}
+                    alt={plant.title}
+                    className="user-post-image"
+                  ></img>
+                </Link>
               </li>
             );
           })
@@ -32,7 +36,7 @@ export const UserPosts = () => {
           <p>No hay publicaciones</p>
         )}
       </ol>
-      {loading && <p>Cargando listado...</p>}
+      {loading && <LoadingComponent />}
       {error && error.message}
     </div>
   );

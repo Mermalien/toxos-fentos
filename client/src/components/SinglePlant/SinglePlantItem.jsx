@@ -34,7 +34,6 @@ export const SinglePlantItem = ({ plant, deletePlant, plants, setPlants }) => {
     return storedValue ? JSON.parse(storedValue) : false;
   });
   const [openEdit, setOpenEdit] = useState(false);
-  console.log("PLANT", plant);
 
   const handleFav = async (e) => {
     try {
@@ -95,7 +94,9 @@ export const SinglePlantItem = ({ plant, deletePlant, plants, setPlants }) => {
       <div className="single-plant-container">
         <div className="single-plant-item" key={plant.id}>
           <PlantBody
+            userId={plant.userId}
             creator_name={plant.creator_name}
+            creator_avatar={plant.creator_avatar}
             title={plant.title}
             category={plant.category}
             description={plant.description}

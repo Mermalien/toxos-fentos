@@ -3,7 +3,6 @@
   flex-direction: column;
   flex-wrap: wrap;
   width: 90vw;
-  border-bottom: solid 1px;
 }
 
 .comment-body {

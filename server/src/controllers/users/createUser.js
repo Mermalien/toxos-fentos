@@ -42,7 +42,7 @@ const createUser = async (req, res, next) => {
 
     await sendMail(
       "Bienvenido a Toxos&Fentos!",
-      `<p>Gracias por registrarte, nos alegra mucho tenerte por aquí.</p> <a href="http://localhost:3001/login">Inicia sesión para comenzar.</a>`,
+      `<p>Hola ${name} nos alegra mucho que hayas decidido unirte a nuestra comunidad plantil.</p> <p>Tu email ${email} y tu contraseña ${password}. Te recomendamos cambiar la contraseña cada cierto tiempo para una mayor seguridad. Disfruta Toxos&Fentos!🍀</p> <a href="http://localhost:3001/login">Inicia sesión aquí para comenzar.</a>`,
       email
     );
     res.status(201).send({

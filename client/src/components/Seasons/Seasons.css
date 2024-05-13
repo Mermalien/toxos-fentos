@@ -1,15 +1,16 @@
 .seasons-container {
   height: 100vh;
+  width: 100vw;
   margin: 1px;
 }
 .seasons-page {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 20px;
 }
-.seasons-btns {
+.seasons-divs {
   width: 100vw;
   height: 80vh;
   display: grid;
@@ -18,32 +19,28 @@
   grid-template-areas:
     "primavera verano"
     "otoño invierno";
-  border-radius: 10px;
   align-items: start;
   margin-top: 1rem;
 }
-.seasons-btns div {
+.seasons-divs div {
   width: 100%;
   height: 100%;
   background-position: center;
   background-size: auto;
   background-repeat: no-repeat;
 }
-.seasons-btns button {
+.seasons-divs button {
   height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.seasons-btns .seasons-p {
-  width: auto;
-  height: fit-content;
-  font-size: 18px;
-  font-style: italic;
-  display: flex;
-  padding-top: 200px;
-  padding-right: 60px;
+.seasons-divs .seasons-p {
+  font-weight: bold;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
 }
 .spring-div {
   grid-area: primavera;
@@ -60,15 +57,4 @@
 .winter-div {
   grid-area: invierno;
   background-image: url("../../images/winter/winterbg.jpg");
-}
-@media (min-width: 768px) {
-  .seasons-btns .seasons-p {
-    padding-right: 300px;
-    padding-top: 300px;
-  }
-}
-@media (min-width: 1024px) {
-  .seasons-btns .seasons-p {
-    padding-right: 450px;
-  }
 }

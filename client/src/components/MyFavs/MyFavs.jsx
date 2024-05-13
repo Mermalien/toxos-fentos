@@ -5,15 +5,14 @@ import { AuthContext } from "../../context/AuthContext";
 import { plantItemPropTypes } from "../../utils/customPropTypes";
 import { handleFavService } from "../../services/plantService";
 import { RiDeleteBinLine } from "react-icons/ri";
-
+import { LoadingComponent } from "../Loading/LoadingComponent";
 const baseURL = import.meta.env.VITE_APP_BACKEND;
 
 export const MyFavs = ({ plant }) => {
   const { token } = useContext(AuthContext);
   const { favs, loading, error, refetch } = useMyFavs(token);
 
-  if (loading) return <p>Cargando...</p>;
-  if (error) return <p>Ha habido un error</p>;
+  if (loading) return <LoadingComponent />;
 
   const sortedFavs = favs
     .slice()
@@ -51,6 +50,7 @@ export const MyFavs = ({ plant }) => {
       ) : (
         <p>Esta carpeta está vacía.</p>
       )}
+      {error && <p>{error}</p>}
     </div>
   );
 };

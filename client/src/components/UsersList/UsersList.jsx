@@ -17,7 +17,6 @@ export const UsersList = ({ setUser }) => {
       try {
         setLoading(true);
         const data = await getAllUsersService();
-        console.log(data);
         setAllUsers(data);
       } catch (error) {
         setError(error.message);

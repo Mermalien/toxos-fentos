@@ -43,8 +43,8 @@ async function main() {
         userId INT UNSIGNED NOT NULL,
         plantId INT UNSIGNED NOT NULL,
         createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (userId) REFERENCES users(id),
-        FOREIGN KEY (plantId) REFERENCES plants(id)
+        FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE,
+        FOREIGN KEY (plantId) REFERENCES plants(id) ON DELETE CASCADE
       )
     `);
     await connection.query(`
@@ -52,11 +52,22 @@ async function main() {
       id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
       userId INT UNSIGNED NOT NULL,
       plantId INT UNSIGNED NOT NULL,
-      FOREIGN KEY (userId) REFERENCES users(id),
-      FOREIGN KEY (plantId) REFERENCES plants(id),
+      FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE,
+      FOREIGN KEY (plantId) REFERENCES plants(id) ON DELETE CASCADE,
       text VARCHAR (1500),
       createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
     )`);
+    await connection.query(`
+    CREATE TABLE IF NOT EXISTS messages(
+      id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+      senderId INT UNSIGNED NOT NULL,
+      receiverId INT UNSIGNED NOT NULL,
+      text VARCHAR(2000) NOT NULL,
+      createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY(senderId) REFERENCES users(id) ON DELETE CASCADE,
+      FOREIGN KEY(receiverId) REFERENCES users(id) ON DELETE CASCADE
+    )
+    `);
 
     console.log("Tablas creadas");
   } catch (error) {

@@ -1,5 +1,5 @@
-import { useState } from "react";
 import "./Nav.css";
+import { useState } from "react";
 import { Auth } from "../Auth/Auth";
 import { Link } from "react-router-dom";
 
@@ -31,19 +31,11 @@ export const Nav = () => {
           <Link to={"/normas-de-uso"} className="link">
             Normas de uso
           </Link>
+          <Link to={"/contact"} className="link">
+            About
+          </Link>
         </div>
       )}
-      <div className="menu-items">
-        <div className="menu-items-nav">
-          <Auth />
-          <Link to={"seasons"} className="link">
-            Plantas de temporada🌸
-          </Link>
-          <Link to={"/normas-de-uso"} className="link">
-            Normas de uso
-          </Link>
-        </div>
-      </div>
     </nav>
   );
 };

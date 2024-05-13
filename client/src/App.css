@@ -9,9 +9,10 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  font-size: 20px;
+  font-size: 16px;
+  font-family: "Roboto";
   overflow-x: hidden;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
 }
 h1,
 h2,
@@ -84,15 +85,21 @@ fieldset > label {
   display: none;
 }
 
-.dark {
-  background-color: #333333;
-  color: #fff;
-}
 .light {
-  background-color: #e9f5ed;
-  color: #333;
+  background-color: #f9f9f9;
+  color: #1a1a1a;
 }
-@media (min-width: 835px) {
+.dark {
+  background-color: #1a1a1a;
+  color: #e8f0e8;
+}
+.dark form input {
+  color: white;
+}
+@media (min-width: 785px) {
+  .App {
+    font-size: 18px;
+  }
   form {
     font-size: 23px;
   }

@@ -29,7 +29,8 @@
 .register-btn {
   color: white;
 }
-@media (min-width: 835px) {
+
+@media (min-width: 768px) {
   .register-page {
     background-size: 50%;
     background-position: left;

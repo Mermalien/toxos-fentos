@@ -16,7 +16,6 @@ export const SingleUser = ({ userId, user, setUser }) => {
     try {
       setErrorMsg("");
       setOpenOptions(!openOptions);
-      console.log("Click en", user.name);
     } catch (error) {
       setErrorMsg(error.message);
       setLoading(false);

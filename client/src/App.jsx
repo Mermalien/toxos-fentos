@@ -6,12 +6,10 @@ import { useContext, useState } from "react";
 import { AuthContext } from "./context/AuthContext";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header/Header";
-import { Footer } from "./components/Footer/Footer";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
 import { PrincipalPage } from "./pages/PrincipalPage/PrincipalPage";
 import { Seasons } from "./components/Seasons/Seasons";
-import { SinglePlantItem } from "./components/SinglePlant/SinglePlantItem";
 import { PlantsList } from "./components/PlantsList/PlantsList";
 import { CreatePlant } from "./components/CreatePlant/CreatePlant";
 import { UserPage } from "./pages/UserPage/UserPage";
@@ -28,6 +26,8 @@ import { DeleteUser } from "./components/DeleteUser/DeleteUser";
 import { SingleComment } from "./components/SingleComment/SingleComment";
 import { PlantComments } from "./components/PlantComments/PlantComments";
 import { AddComment } from "./components/AddComment/AddComment";
+import { Social } from "./components/Social/Social";
+import { UserPlantItem } from "./components/UserPosts/UserPlantItem";
 
 const PrivateRoute = ({ children }) => {
   const { token } = useContext(AuthContext);
@@ -79,9 +79,10 @@ function App() {
             <Route path="/seasons/autumn" element={<AutumnPlants />} />
             <Route path="/seasons/winter" element={<WinterPlants />} />
             <Route path="/normas-de-uso" element={<Normas />} />
+            <Route path="/contact" element={<Social />} />
 
             <Route path="/plants" element={<PlantsList />} />
-            <Route path="/plants/:plantId" element={<SinglePlantItem />} />
+            <Route path="/plants/:plantId" element={<UserPlantItem />} />
             <Route path="/plant/:plantId/update" element={<EditPost />} />
             <Route path="/comments/:plantId" element={<PlantComments />} />
             <Route path="/comments/comment/:id" element={<SingleComment />} />
@@ -105,7 +106,6 @@ function App() {
               }
             />
           </Routes>
-          <Footer />
         </div>
       </div>
     </>

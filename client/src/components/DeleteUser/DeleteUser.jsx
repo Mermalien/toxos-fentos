@@ -37,6 +37,7 @@ export const DeleteUser = () => {
         throw new Error(body.message);
       }
       navigate("/register");
+      window.location.reload();
     } catch (error) {
       setError(error.message);
       throw new Error(error.message);

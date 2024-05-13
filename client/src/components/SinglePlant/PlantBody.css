@@ -2,20 +2,30 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  padding: 0.5rem;
+}
+.plant-body .plant-creator {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.plant-creator .user-avatar-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+}
+.plant-body .creator-link {
+  text-decoration: none;
+  display: flex;
 }
 .plant-image-container {
-  width: 100%;
   display: flex;
   justify-content: center;
-  background-color: rgba(139, 176, 147, 0.303);
-  border-radius: 10px;
 }
 .plant-image {
   height: 100%;
   width: 100%;
-}
-.plant-body .plant-description {
-  padding: 0.5rem;
+  border-radius: 16px;
 }
 .plant-description button {
   height: 25px;
